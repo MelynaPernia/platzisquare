@@ -1,0 +1,14 @@
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding-left: 2px;
+}
+
+.numero_par{
+  background: azure;
+  font-size: 14px;
+
+}
