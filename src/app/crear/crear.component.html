@@ -1,0 +1,38 @@
+<div class="card bg-light p-3 mb-3">
+  <span> <a class="lugar" routerLink="/lugares">lugares</a>/ Crear lugar</span>
+</div>
+<div class="container">
+  <label >Nombre</label>
+  <input type="text" class="form-control" [(ngModel)]="lugar.name">
+  <label >Distancia</label>
+  <input type="number" class="form-control" [(ngModel)]="lugar.distancia">
+  <label >Cercanía</label>
+  <input type="number" class="form-control" [(ngModel)]="lugar.cercania">
+  <label >Description</label>
+  <textarea type="text" class="form-control" [(ngModel)]="lugar.description"></textarea>
+  <label >Plan</label>
+  <input type="text" class="form-control" [(ngModel)]="lugar.plan">
+  <br>
+    <h3>Datos de dirección</h3>
+  <label >Calle y número</label>
+  <input type="text" class="form-control" [(ngModel)]="lugar.calle">
+  <label >Ciudad</label>
+  <input type="text" class="form-control" [(ngModel)]="lugar.ciudad">
+  <label >Pais</label>
+  <input type="text" class="form-control" [(ngModel)]="lugar.pais">
+  <hr>
+  <!--<a class="btn btn-primary">Enviar</a>-->
+  <a class="btn btn-primary"  (click)="guardarLugar()">Enviar</a>
+  <a class="btn btn-danger" routerLink="/lugares">Cancelar</a>
+  <!--<h1>{{lugar.name}}</h1>-->
+  <!--<hr/>-->
+  <!--<small>{{lugar.distancia}} km</small>-->
+  <!--<br/>-->
+  <!--<div class="card bg-light p-3">-->
+  <!--<p>-->
+  <!--{{lugar.description}}-->
+  <!--</p>-->
+  <!--<b>{{lugar.plan}}</b>-->
+  <!--</div>-->
+
+</div>

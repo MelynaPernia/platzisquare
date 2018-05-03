@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {LugaresService} from '../services/lugares.services';
 
 @Component( {
   selector: 'app-detalle',
@@ -24,21 +25,22 @@ export class DetalleComponent {
   id = null;
   lugar: any ={};
   // Capturar el parametro
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,
+              private lugaresServices: LugaresService) {
     // console.log(this.route.snapshot.params['id']);
     // console.log(this.route.snapshot.queryParams['action']);
     // console.log(this.route.snapshot.queryParams['referer']);
     this.id = this.route.snapshot.params['id'];
     // console.log(this.route.snapshot.params['id']);
     console.log('id' + this.id);
-    console.log(this.buscarLugar());
+    // console.log(this.buscarLugar());
     // console.log(this.lugares)
-    this.lugar = this.buscarLugar();
+    this.lugar = this.lugaresServices.buscarLugar(this.id);
   }
 
-  buscarLugar() {
-    return this.lugares.find((lugar) => { return lugar.id == this.id} ) || null;
-  }
+  // buscarLugar() {
+  //   return this.lugares.find((lugar) => { return lugar.id == this.id} ) || null;
+  // }
   // people: any = [
   //   {name: 'Juan', age: 34},
   //   {name: 'Marta', age: 14},
