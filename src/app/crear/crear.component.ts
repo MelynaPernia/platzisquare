@@ -14,8 +14,7 @@ export class CrearComponent {
       this.id = this.route.snapshot.params['id'];
       console.log(this.id);
       if(this.id != 'new') {
-        this.lugarService.getLugar(this.id)
-          .valueChanges().subscribe(lugar => {
+        this.lugarService.getLugar(this.id).object().subscribe(lugar => {
             this.lugar = lugar;
           });
       }
